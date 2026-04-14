@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EGO特质测试 | 探索你的内在特质</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -34,7 +34,7 @@
                 </div>
             </div>
             
-            <button class="start-btn" id="start-test">
+            <button class="start-btn" id="start-test" onclick="startTest()">
                 <i class="fas fa-play-circle"></i> 开始测试
             </button>
             
@@ -43,34 +43,35 @@
             </div>
         </div>
         
-        <div id="quiz-page" class="page">
+        <div id="quiz-page" class="page" style="display: none;">
             <div class="quiz-header">
                 <h2>EGO特质测试</h2>
                 <div class="progress-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
                 <div class="question-counter">
-                    <span id="current-question">1</span> / 11
+                    <span id="current-question">0</span> / 11
                 </div>
             </div>
             
             <div class="quiz-content">
                 <div class="question-container">
-                    <div class="question-number">问题 <span id="question-num">1</span></div>
-                    <div class="question-text" id="question-text"></div>
+                    <div class="question-number">问题 <span id="question-num">-</span></div>
+                    <div class="question-text" id="question-text">点击「开始测试」加载题目</div>
                     
                     <div class="options-container" id="options-container">
+                        <!-- 选项将动态生成 -->
                     </div>
                 </div>
                 
                 <div class="navigation-buttons">
-                    <button class="nav-btn prev-btn" id="prev-btn">
+                    <button class="nav-btn prev-btn" id="prev-btn" onclick="prevQuestion()" style="display: none;">
                         <i class="fas fa-arrow-left"></i> 上一题
                     </button>
-                    <button class="nav-btn next-btn" id="next-btn">
+                    <button class="nav-btn next-btn" id="next-btn" onclick="nextQuestion()">
                         下一题 <i class="fas fa-arrow-right"></i>
                     </button>
-                    <button class="nav-btn submit-btn" id="submit-btn" style="display: none;">
+                    <button class="nav-btn submit-btn" id="submit-btn" onclick="showResult()" style="display: none;">
                         <i class="fas fa-check-circle"></i> 查看结果
                     </button>
                 </div>
@@ -106,10 +107,10 @@
             </div>
             
             <div class="actions">
-                <button class="action-btn restart-btn" id="restart-btn">
+                <button class="action-btn restart-btn" id="restart-btn" onclick="restartTest()">
                     <i class="fas fa-redo"></i> 重新测试
                 </button>
-                <button class="action-btn home-btn" id="back-home-btn">
+                <button class="action-btn home-btn" id="back-home-btn" onclick="backToHome()">
                     <i class="fas fa-home"></i> 返回首页
                 </button>
             </div>
@@ -119,6 +120,6 @@
             </div>
         </div>
     </div>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

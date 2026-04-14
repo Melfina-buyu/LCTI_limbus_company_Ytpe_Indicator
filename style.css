@@ -35,17 +35,11 @@ body {
 }
 
 .page {
-    display: none;
     background-color: white;
     border-radius: 20px;
     box-shadow: var(--shadow);
     overflow: hidden;
     min-height: 600px;
-}
-
-.page.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
